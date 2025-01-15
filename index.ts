@@ -1,3 +1,4 @@
+namespace index {
 let message: string = "Hello, TypeScript!";
 console.log(message);
 
@@ -22,4 +23,4 @@ console.log(bar.get(foo));
 // let poyo1 : {
 //     [k: hoge]: number;
 // }
-
+}
