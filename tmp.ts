@@ -1,31 +1,28 @@
-namespace tmp2 {
-    const hoge = 'aaa';
-    const foo: boolean = Boolean(hoge && 111);
+namespace tmp {
+    class Foo {
+        private readonly hoge: string = 'hoge';
+
+        // プロパティに定数は利用できない
+        // A class member cannot have the 'const' keyword.
+        // const fuga: string = 'fuga';
+    }
+
+    const foo = new Foo();
     console.log(foo);
 
-    const hoge2 = {
-        name: 'aaa',
-        age: true
+    export interface RequiredParams {
+        entryId: string;
+        phoneNumber?: string;
+        qmmcdk: string;
+        caller: string;
     }
 
-    console.log(Object.values(hoge2).every((value) => value));
-
-
-    enum Color {
-        RED,
-        BLUE,
-        GREEN,
+    const requiredParams: RequiredParams = {
+        entryId: 'entryId',
+        qmmcdk: 'qmmcdk',
+        caller: 'caller'
     }
 
-    const myColor1: Color = Color.RED;
-    const myColor2: number = Color.RED;
-    const myColor3: Color = 1;
+    console.log(requiredParams.phoneNumber);
 
-// Type '3' is not assignable to type 'Color'.
-// const myColor4: Color = 3;
-
-
-    console.log(myColor1);
-    console.log(myColor2);
-    console.log(myColor3);
 }
