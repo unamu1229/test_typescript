@@ -28,4 +28,27 @@ namespace tmp13 {
 
 
     console.log(foo);
+
+
+    type Fuga = {
+        name: string;
+        id: number;
+    }
+
+    // typeもinterfaceと同じようにオブジェクトリテラルだとエラーになる
+    // const poke: Fuga = {
+    //     name: 'poke',
+    //     id: 1,
+    //     age: 20
+    // }
+
+    const fuga = {
+        name: 'fuga',
+        id: 2,
+        age: 20
+    }
+
+    const baz: Fuga = fuga;
+
+    console.log(baz);
 }
